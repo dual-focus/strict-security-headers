@@ -49,7 +49,7 @@ abstract class Header implements HeaderInterface {
 	 * @return void
 	 */
 	public function init() {
-		\add_action( 'send_headers', [ $this, 'send_header' ] );
+		\add_action( 'send_headers', [ $this, 'send_header' ], 999999999 );
 	}
 
 	/**
