@@ -1,0 +1,10 @@
+# List all files and directories to be deployed to VIP Go servers.
+# Use the rsync syntax https://linux.die.net/man/1/rsync
+
++ /lib/
++ /vendor/
++ /strict-security-headers.php
++ /LICENSE
+
+# Exclude everything else
+- /*
