@@ -109,21 +109,16 @@ final class Plugin {
 if ( is_readable( AUTOLOADER ) ) {
 	require_once AUTOLOADER;
 
-	add_action(
-		'plugins_loaded',
-		function() {
-			Plugin::set( 'StrictTransportSecurity', new StrictTransportSecurity() );
-			Plugin::set( 'PermissionsPolicy', new PermissionsPolicy() );
-			Plugin::set( 'ReferrerPolicy', new ReferrerPolicy() );
-			Plugin::set( 'XContentTypeOptions', new XContentTypeOptions() );
-			Plugin::set( 'XFrameOptions', new XFrameOptions() );
+	Plugin::set( 'ContentSecurityPolicy', new ContentSecurityPolicy() );
+	Plugin::set( 'StrictTransportSecurity', new StrictTransportSecurity() );
+	Plugin::set( 'PermissionsPolicy', new PermissionsPolicy() );
+	Plugin::set( 'ReferrerPolicy', new ReferrerPolicy() );
+	Plugin::set( 'XContentTypeOptions', new XContentTypeOptions() );
+	Plugin::set( 'XFrameOptions', new XFrameOptions() );
 
-			foreach ( Plugin::instances() as $key => $instance ) {
-				if ( method_exists( $instance, 'init' ) ) {
-					$instance->init();
-				}
-			}
-		},
-		9999
-	);
+	foreach ( Plugin::instances() as $key => $instance ) {
+		if ( method_exists( $instance, 'init' ) ) {
+			$instance->init();
+		}
+	}
 }
