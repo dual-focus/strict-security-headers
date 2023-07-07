@@ -5,6 +5,7 @@
 + /vendor/
 + /strict-security-headers.php
 + /LICENSE
++ /readme.txt
 
 # Exclude everything else
 - /*
