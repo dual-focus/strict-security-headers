@@ -33,10 +33,11 @@
             "Dealerdirect\\Composer\\Plugin\\Installers\\PHPCodeSniffer\\Plugin::run"
         ],
         "lint": "./vendor/bin/phpcs --standard=./phpcs.xml",
-        "deploy": [
+        "build": [
             "composer install --no-dev --prefer-dist --optimize-autoloader",
             "if [ ! -d './build' ]; then mkdir build; fi",
-            "rsync -arm --filter='protect .git' --include-from='./.distinclude' . ./build/strict-security-headers"
+            "rsync -arm --delete --force --filter='protect .git' --include-from='./.distinclude' . ./build/strict-security-headers",
+            "composer install"
         ]
     },
     "extra": {}
