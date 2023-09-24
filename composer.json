@@ -36,7 +36,14 @@
         "build": [
             "composer install --no-dev --prefer-dist --optimize-autoloader",
             "if [ ! -d './build' ]; then mkdir build; fi",
-            "rsync -am --delete --force --filter='protect .git' --include-from='./.distinclude' . ./build/strict-security-headers",
+            "rsync -am --delete --force --include-from='./.distinclude' . ./build/strict-security-headers",
+            "composer install"
+        ],
+        "deploy": [
+            "composer install --no-dev --prefer-dist --optimize-autoloader",
+            "if [ ! -d './svn/trunk' ]; then exit; fi",
+            "rsync -am --delete --force --include-from='./.distinclude' . ./svn/trunk",
+            "rsync -am --delete --force ./.wp-org/assets/* ./svn/assets/",
             "composer install"
         ]
     },
