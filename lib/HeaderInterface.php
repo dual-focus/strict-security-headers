@@ -28,5 +28,4 @@ interface HeaderInterface {
 	 * @return void
 	 */
 	public function send_header( $wp );
-
 }
