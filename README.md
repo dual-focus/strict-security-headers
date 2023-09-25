@@ -36,7 +36,7 @@ It should be compatible with most other security plugins, but it’s always good
 
 ## :page_facing_up: License
 
-This project is licensed under the [GPLv2 or later License](https://www.gnu.org/licenses/gpl-2.0.html).
+This project is licensed under [MPL-2.0](LICENSE).
 
 ## :mailbox: Contact
 
