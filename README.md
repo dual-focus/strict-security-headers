@@ -11,7 +11,7 @@
 
 ## Installation
 
-1. Download the latest release of the plugin from the [Releases](https://github.com/username/strict-security-headers/releases) page.
+1. Download the latest release of the plugin from the [Releases](https://github.com/dual-focus/strict-security-headers/releases) page.
 2. Upload the `strict-security-headers` folder to the `/wp-content/plugins/` directory of your WordPress installation.
 3. Activate the plugin through the 'Plugins' menu in WordPress.
 4. Enjoy enhanced security headers on your website!
